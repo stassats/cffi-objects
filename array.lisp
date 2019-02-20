@@ -63,7 +63,7 @@
          (el-type (element-type cffi-null-array)))
     (do ((i 0 (+ i 1))) ((null-pointer-p (mem-aref ptr :pointer i)))
       (push (mem-aref ptr el-type i) res))
-    (coerce (nreverse res) 'array)))
+    (coerce (nreverse res) 'vector)))
 
 (defctype string-array (null-array :string) "Zero-terminated string array")
 
